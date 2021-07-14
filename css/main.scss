@@ -1,0 +1,138 @@
+$text-color: #FFFFFF;
+
+@mixin style-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin bg-image {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+html{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Public Sans', sans-serif;
+}
+
+.container{
+  width: 100%;
+  max-width: 1150px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// header
+
+.header{
+  padding-top: 32px;
+  @include flex()
+}
+
+.button{
+  width: 24px;
+  height: 13px;
+  background-color: transparent;
+  border: none;
+  background-image: url(../img/burger.svg);
+  @include bg-image()
+}
+
+.sitenav{
+  display: none;
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  min-width: 223px;
+  background-color: #33323D;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &--list{
+    text-align: center;
+    @include style-list()
+  }
+
+  &--item:not(:last-child){
+    margin-bottom: 32px;
+  }
+
+  &--link{
+    display: inline-block;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $text-color;
+    text-decoration: none;
+
+    &:hover{
+      color: aqua;
+    }
+  }
+}
+
+.sitenav-open .sitenav{
+  display: block;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .container{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .sitenav{
+    position: static;
+    display: block;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+
+    &--list{
+      display: flex;
+      align-items: center;
+    }
+
+
+    &--item:not(:last-child){
+      margin-bottom: 0;
+      margin-right: 42px;
+    }
+
+    &--link{
+      color: #33323D;
+    }
+
+  }
+
+  .button{
+    display: none;
+  }
+
+}

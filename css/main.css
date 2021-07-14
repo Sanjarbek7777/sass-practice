@@ -1,0 +1,131 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Public Sans', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1150px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.button {
+  width: 24px;
+  height: 13px;
+  background-color: transparent;
+  border: none;
+  background-image: url(../img/burger.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.sitenav {
+  display: none;
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  min-width: 223px;
+  background-color: #33323D;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.sitenav--list {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sitenav--item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.sitenav--link {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.sitenav--link:hover {
+  color: aqua;
+}
+
+.sitenav-open .sitenav {
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .sitenav {
+    position: static;
+    display: block;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+  }
+  .sitenav--list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .sitenav--item:not(:last-child) {
+    margin-bottom: 0;
+    margin-right: 42px;
+  }
+  .sitenav--link {
+    color: #33323D;
+  }
+  .button {
+    display: none;
+  }
+}
+/*# sourceMappingURL=main.css.map */
